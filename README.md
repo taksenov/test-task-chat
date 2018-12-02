@@ -6,6 +6,7 @@ This simple chat app demonstrate the WebSocket by the backend and frontend side.
 
 ```bash
 git clone https://github.com/taksenov/test-task-chat.git
+cd ./test-task-chat
 npm i
 ```
 
