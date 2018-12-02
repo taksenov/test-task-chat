@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
   // Create WebSocket connection
   const ws = new WebSocket('ws://localhost:3000');
 
@@ -48,9 +48,7 @@ window.onload = function () {
   // Event listeners
   // Key combination for CTRL+ENTER for message send
   messageForm.addEventListener('keyup', e => {
-    const {
-      keyCode
-    } = e;
+    const { keyCode } = e;
 
     switch (keyCode) {
       case ENTER_KEYCODE:
@@ -65,9 +63,7 @@ window.onload = function () {
     }
   });
   messageForm.addEventListener('keydown', e => {
-    const {
-      keyCode
-    } = e;
+    const { keyCode } = e;
 
     switch (keyCode) {
       case ENTER_KEYCODE:
@@ -95,44 +91,40 @@ window.onload = function () {
   });
 
   // WebSocket messages state and DOM
-  ws.onmessage = function (event) {
+  ws.onmessage = function(event) {
     const message = JSON.parse(event.data);
     let text = '';
     initial = HELLO;
 
     switch (message.type) {
-      case HELLO:
-        {
-          initial = message.type;
-          initialText = message.message;
-          userID = message.data;
-          break;
-        }
-      case INFO:
-        {
-          initial = message.type;
-          membersList = message.nickNames;
-          initialText = initialText;
-          text = message.message;
-          if (userID === message.data) user = message.nickName;
-          break;
-        }
-      case MESSAGE:
-        {
-          initial = message.type;
-          membersList = message.nickNames;
-          initialText = initialText;
-          text = `${message.nickName} :
+      case HELLO: {
+        initial = message.type;
+        initialText = message.message;
+        userID = message.data;
+        break;
+      }
+      case INFO: {
+        initial = message.type;
+        membersList = message.nickNames;
+        initialText = initialText;
+        text = message.message;
+        if (userID === message.data) user = message.nickName;
+        break;
+      }
+      case MESSAGE: {
+        initial = message.type;
+        membersList = message.nickNames;
+        initialText = initialText;
+        text = `${message.nickName} :
 _________
 ${message.message}`;
-          if (userID === message.data) user = message.nickName;
-          break;
-        }
-      default:
-        {
-          initial = NO_STATUS;
-          break;
-        }
+        if (userID === message.data) user = message.nickName;
+        break;
+      }
+      default: {
+        initial = NO_STATUS;
+        break;
+      }
     }
 
     // DOM for Sign-Up form
@@ -157,7 +149,7 @@ ${message.message}`;
       messageElem.innerHTML = text;
       membersForm.innerHTML = '';
       memberElem.innerText = _.compact(
-        _.remove(membersList, function (n) {
+        _.remove(membersList, function(n) {
           return n !== NOT_PRESENT;
         }),
       );
