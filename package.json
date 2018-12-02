@@ -4,7 +4,9 @@
   "description": "Test task about WebSocket technology",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server/server.js",
+    "public": "http-server ./src/public"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/taksenov/test-task-chat/issues"
   },
-  "homepage": "https://github.com/taksenov/test-task-chat#readme"
+  "homepage": "https://github.com/taksenov/test-task-chat#readme",
+  "dependencies": {
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "http-server": "^0.11.1"
+  }
 }

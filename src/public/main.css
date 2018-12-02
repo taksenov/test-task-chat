@@ -1,0 +1,32 @@
+input[type=text] {
+  width: 300px;
+  border: 1px solid lightseagreen;
+  padding: 5px 10px;
+  color: darkred;
+  font-size: 16px;
+  font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
+}
+
+button {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+#subscribe {
+  color: darkblue;
+  font-size: 14px;
+  font-family: 'Courier New', 'Courier', monospace;
+  margin-top: 20px;
+}
+
+.chat {
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+  width: 700px;
+  max-width: 700px;
+  min-width: 700px;
+  border: 1px solid #cfcfcf38;
+  overflow: scroll;
+}
