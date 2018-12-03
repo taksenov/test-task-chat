@@ -21,4 +21,4 @@ npm run start
 run web-server: "http-server ./src/public" or "npm run public"
 ```
 
-2.  In browser go to url: "http://localhost:8080"
+2.  In your browser go to url: "http://localhost:8080"
