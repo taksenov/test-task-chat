@@ -1,6 +1,7 @@
 # test-task-chat
 
-This simple chat app demonstrate the WebSocket by the backend and frontend side.
+This simple chat app demonstrates WebSocket by the backend and the frontend
+side.
 
 0.  Get this app:
 
